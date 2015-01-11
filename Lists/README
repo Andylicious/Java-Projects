@@ -1,0 +1,53 @@
+Note: List & Lex have been modified slightly (from the original project description) for originality
+1. Remember to cd into the directory 
+
+High-level descriptions: 
+ListClient.java 
+ >> Manually inputs in your list & tests List.java modules 
+Lex.java
+ >> Takes in arbitrary list on the same directory & outputs 
+
+Makefile usage: 
+>>make 
+invokes javac on Lex.java and List.java
+>> make clean
+invokes rm -f *.class and rm Lex to clean up source files
+
+Lex usage: 
+java Lex inputfile outputfile
+
+Operation: 
+Lex will sort an input file lexicographically. 
+Outputfile will contain the same lines as the input, but re-arranged into alphabetical order. 
+Example
+Inputfile:
+one
+two
+three
+four
+five 
+
+will produce: 
+outputfile: 
+five
+four
+one
+three
+two 
+
+Summary of Lex.java operations
+ a) Check for two command line arguments, standard error for > or < two args
+ b) count # of lines in the file in arg[0]. Create String array of this length
+ c) Create a List (modules created in List.java) whose elements are the indices of the String array. The indices should be arranged in an order that sorts the array. 
+
+Using the same input file as above, 
+Indices: 0   1     2    3    4
+		 one two three four five
+The sorted list should be: 4 3 0 2 1
+
+Algorithm used: a variation of Insertion Sort
+  d) Use the list to print array to an outputfile named by arg[1]
+  
+LIST specifications: 
+The list module is a bidirectional queue that has a "pointer" to be used for iteration. The "pointer"'s primary function will be manipulating the element of the list. 
+
