@@ -1,1 +1,11 @@
-Hello WOrld
+Here, you will find a program written in java implementing a client/server chatter application. We will be making use of internet connections using sockets. 
+
+Each process will consist of several threads:
+
+To Specify a server: 
+chatter [-@ flags] port
+
+To specify a client:
+chatter [-@ flags] hostname:port username 
+
+This program has been tested on a unix timeshare. 
